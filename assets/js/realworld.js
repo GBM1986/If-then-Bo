@@ -14,7 +14,10 @@ const myAnsverFeedbackElement = document.getElementById('answerFeedback');
 
 myAnsverButton.addEventListener('click', () => {
 
-    /* din kode her.  husk at skrive view funktion der viser om svaret er korrekt i myAnsverFeedbackElement, brug evt. innerHTML*/
+    if (myAnsverInput.value === "nej") {
+        myAnsverFeedbackElement.innerHTML = "nej";
+    } else if (myAnsverInput.value === "svaret er forkert. prøv igen.");
+      
 
 });
 
@@ -23,6 +26,15 @@ nej
 ja i disney film
 */
 
+myAnswerButton.addEventListener('click', () => {
+    const userAnswer = myAnswerInput.value.toLowerCase(); // Convert the input to lowercase for case-insensitive comparison
+    
+    if (userAnswer === 'nej' || userAnswer === 'ja i disney film') {
+        myAnswerFeedbackElement.innerHTML = 'Svaret er korrekt!';
+    } else {
+        myAnswerFeedbackElement.innerHTML = 'Svaret er forkert. Prøv igen.';
+    }
+});
 
 /*opgave 3: skriv en kode der valider formen med følgende elementer: (denne opgave er på extreme niveau) 
 
